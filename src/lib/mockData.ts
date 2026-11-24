@@ -1,4 +1,4 @@
-import { Property } from '@/types';
+import { Property, Host, Amenity } from '@/types';
 
 export const mockProperties: Property[] = [
   {
@@ -7,6 +7,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: apartamento en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+    ],
     price: 125,
     currency: '€',
     rating: 4.8,
@@ -16,6 +21,7 @@ export const mockProperties: Property[] = [
       from: '15 ene',
       to: '18 ene',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 15 de enero',
   },
   {
     id: '2',
@@ -23,6 +29,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: apartamento en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+    ],
     price: 189,
     currency: '€',
     rating: 4.9,
@@ -32,6 +43,7 @@ export const mockProperties: Property[] = [
       from: '20 ene',
       to: '23 ene',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 20 de enero',
   },
   {
     id: '3',
@@ -39,6 +51,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: estudio en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+    ],
     price: 89,
     currency: '€',
     rating: 4.6,
@@ -48,6 +65,7 @@ export const mockProperties: Property[] = [
       from: '10 ene',
       to: '15 ene',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 10 de enero',
   },
   {
     id: '4',
@@ -55,6 +73,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: apartamento en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+    ],
     price: 156,
     currency: '€',
     rating: 4.7,
@@ -64,6 +87,7 @@ export const mockProperties: Property[] = [
       from: '25 ene',
       to: '28 ene',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 25 de enero',
   },
   {
     id: '5',
@@ -71,6 +95,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: estudio en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+    ],
     price: 110,
     currency: '€',
     rating: 4.8,
@@ -80,6 +109,7 @@ export const mockProperties: Property[] = [
       from: '12 ene',
       to: '19 ene',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 12 de enero',
   },
   {
     id: '6',
@@ -87,6 +117,11 @@ export const mockProperties: Property[] = [
     type: 'Alojamiento entero: apartamento en París, Francia',
     location: 'París, Francia',
     image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop',
+    ],
     price: 245,
     currency: '€',
     rating: 4.9,
@@ -96,6 +131,7 @@ export const mockProperties: Property[] = [
       from: '30 ene',
       to: '2 feb',
     },
+    cancellationInfo: '0 € hoy · Cancelación gratuita antes del 30 de enero',
   },
 ];
 
@@ -103,4 +139,66 @@ export const mockCategories = [
   'Todo',
   'Alojamientos',
   'Hoteles',
+];
+
+export const mockHosts: { [key: string]: Host } = {
+  '1': {
+    id: 'host-1',
+    name: 'Marie',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
+    description: 'Anfitriona experimentada y acogedora',
+    responseTime: 'Responde en 1 hora',
+    responseRate: 100,
+  },
+  '2': {
+    id: 'host-2',
+    name: 'Pierre',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+    description: 'Propietario de lofts modernos en París',
+    responseTime: 'Responde en 2 horas',
+    responseRate: 98,
+  },
+  '3': {
+    id: 'host-3',
+    name: 'Sophie',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+    description: 'Artista local que ama compartir su estudio',
+    responseTime: 'Responde en 3 horas',
+    responseRate: 95,
+  },
+  '4': {
+    id: 'host-4',
+    name: 'Jean',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+    description: 'Gerente de propiedades profesional',
+    responseTime: 'Responde en 1 hora',
+    responseRate: 100,
+  },
+  '5': {
+    id: 'host-5',
+    name: 'Claire',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+    description: 'Diseñadora de interiores con gusto exquisito',
+    responseTime: 'Responde en 2 horas',
+    responseRate: 99,
+  },
+  '6': {
+    id: 'host-6',
+    name: 'Antoine',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+    description: 'Coleccionista de arte y anfitrión distinguido',
+    responseTime: 'Responde en 1 hora',
+    responseRate: 100,
+  },
+};
+
+export const mockAmenities: Amenity[] = [
+  { id: 'wifi', name: 'WiFi', icon: '📶' },
+  { id: 'kitchen', name: 'Cocina', icon: '🍳' },
+  { id: 'tv', name: 'Televisión', icon: '📺' },
+  { id: 'washer', name: 'Lavadora', icon: '🧺' },
+  { id: 'ac', name: 'Aire acondicionado', icon: '❄️' },
+  { id: 'heating', name: 'Calefacción', icon: '🔥' },
+  { id: 'parking', name: 'Estacionamiento', icon: '🅿️' },
+  { id: 'balcony', name: 'Balcón', icon: '🏞️' },
 ];

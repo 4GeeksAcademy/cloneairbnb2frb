@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Property } from '@/types';
 import { PropertyCard } from './PropertyCard';
 
@@ -6,7 +7,7 @@ interface PropertyGridProps {
   properties: Property[];
   columns?: 1 | 2 | 3;
   gap?: 'sm' | 'md' | 'lg';
-  onPropertyClick: (id: string) => void;
+  onPropertyClick?: (id: string) => void;
   onSaveProperty?: (id: string) => void;
   savedProperties?: string[];
 }
@@ -36,13 +37,13 @@ export const PropertyGrid: React.FC<PropertyGridProps> = ({
       className={`grid ${columnsClasses[columns]} ${gapClasses[gap]} px-4 py-4`}
     >
       {properties.map((property) => (
-        <PropertyCard
-          key={property.id}
-          property={property}
-          onClick={() => onPropertyClick(property.id)}
-          onSave={onSaveProperty}
-          isSaved={savedProperties.includes(property.id)}
-        />
+        <Link key={property.id} href={`/rooms/${property.id}`}>
+          <PropertyCard
+            property={property}
+            onSave={onSaveProperty}
+            isSaved={savedProperties.includes(property.id)}
+          />
+        </Link>
       ))}
     </div>
   );

@@ -1,11 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import { Property } from '@/types';
 import { PropertyCard } from './PropertyCard';
 
 interface PropertyCarouselProps {
   properties: Property[];
   title?: string;
-  onPropertyClick: (id: string) => void;
+  onPropertyClick?: (id: string) => void;
   onSaveProperty?: (id: string) => void;
   savedProperties?: string[];
   showMoreLink?: boolean;
@@ -53,12 +54,13 @@ export const PropertyCarousel: React.FC<PropertyCarouselProps> = ({
               key={property.id}
               className="flex-shrink-0 w-56"
             >
-              <PropertyCard
-                property={property}
-                onClick={() => onPropertyClick(property.id)}
-                onSave={onSaveProperty}
-                isSaved={savedProperties.includes(property.id)}
-              />
+              <Link href={`/rooms/${property.id}`}>
+                <PropertyCard
+                  property={property}
+                  onSave={onSaveProperty}
+                  isSaved={savedProperties.includes(property.id)}
+                />
+              </Link>
             </div>
           ))}
         </div>

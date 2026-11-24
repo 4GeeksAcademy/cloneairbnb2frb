@@ -42,8 +42,15 @@ export default function Home() {
     }
 
     if (selectedCategory !== 'Todo') {
+      // Map category to search pattern
+      const categoryPatterns: { [key: string]: string } = {
+        'Alojamientos': 'Alojamiento',
+        'Hoteles': 'Hotel',
+      };
+      const pattern = categoryPatterns[selectedCategory] || selectedCategory;
+
       filtered = filtered.filter((prop) =>
-        prop.type.toLowerCase().includes(selectedCategory.toLowerCase())
+        prop.type.toLowerCase().includes(pattern.toLowerCase())
       );
     }
 
@@ -56,17 +63,13 @@ export default function Home() {
     );
   };
 
-  const handlePropertyClick = (id: string) => {
-    // TODO: Navigate to detail page
-    console.log(`Navigate to room ${id}`);
-  };
-
   return (
     <main className="bg-white min-h-screen pb-28">
       {/* Search Bar */}
       <SearchBar
         onSearch={setSearchQuery}
         placeholder="Empieza a buscar"
+        navigateTo="/catalog"
       />
 
       {/* Category Filter */}
@@ -104,7 +107,6 @@ export default function Home() {
           <PropertyCarousel
             title="Descubre experiencias cerca de ti"
             properties={filteredProperties.slice(0, 3)}
-            onPropertyClick={handlePropertyClick}
             onSaveProperty={handleSaveProperty}
             savedProperties={savedPropertyIds}
             showMoreLink
@@ -114,7 +116,6 @@ export default function Home() {
           <PropertyCarousel
             title="Quédate en París"
             properties={filteredProperties.slice(3)}
-            onPropertyClick={handlePropertyClick}
             onSaveProperty={handleSaveProperty}
             savedProperties={savedPropertyIds}
             showMoreLink

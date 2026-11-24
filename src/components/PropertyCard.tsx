@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Property } from '@/types';
 
 interface PropertyCardProps {
@@ -6,6 +7,7 @@ interface PropertyCardProps {
   onClick?: () => void;
   onSave?: (id: string) => void;
   isSaved?: boolean;
+  href?: string;
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -13,10 +15,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
   onClick,
   onSave,
   isSaved = false,
+  href,
 }) => {
   const imageUrl = property.image || (property.images?.[0] ?? '');
+  const link = href || `/rooms/${property.id}`;
 
-  return (
+  const content = (
     <div
       onClick={onClick}
       className="cursor-pointer hover:opacity-90 transition-opacity"
@@ -67,11 +71,33 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
             {property.dates.from} – {property.dates.to}
           </p>
         )}
-        <p className="text-sm font-semibold text-gray-900 mt-2">
-          {property.price}
-          {property.currency || '€'} en total
-        </p>
+        <div className="flex items-center justify-between mt-2">
+          <p className="text-sm font-semibold text-gray-900">
+            {property.price}
+            {property.currency || '€'} en total
+          </p>
+          {property.rating && (
+            <div className="flex items-center gap-1">
+              <span className="text-sm font-semibold text-gray-900">
+                ⭐ {property.rating}
+              </span>
+              {property.reviewCount && (
+                <span className="text-xs text-gray-600">
+                  ({property.reviewCount})
+                </span>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
+  );
+
+  return href ? (
+    <Link href={link} className="block">
+      {content}
+    </Link>
+  ) : (
+    content
   );
 };
